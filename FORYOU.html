@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .gift-container {
+      text-align: center;
+    }
+
+    .gift-box {
+      width: 160px;
+      height: 160px;
+      background: #ff4d6d;
+      position: relative;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.05);
+    }
+
+    .gift-lid {
+      width: 180px;
+      height: 50px;
+      background: #c9184a;
+      position: absolute;
+      top: -40px;
+      left: -10px;
+      border-radius: 10px;
+      transition: transform 0.6s ease;
+    }
+
+    .gift-ribbon {
+      position: absolute;
+      width: 20px;
+      height: 160px;
+      background: #fff;
+      left: 70px;
+      top: 0;
+    }
+
+    .gift-ribbon::after {
+      content: '';
+      position: absolute;
+      width: 160px;
+      height: 20px;
+      background: #fff;
+      top: 70px;
+      left: -70px;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #fff;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.6s ease;
+    }
+
+    .opened .gift-lid {
+      transform: rotate(-25deg) translateY(-60px);
+    }
+
+    .opened .message {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gift-container">
+    <div class="gift-box" onclick="openGift()">
+      <div class="gift-lid"></div>
+      <div class="gift-ribbon"></div>
+    </div>
+    <div class="message" id="message">
+      I LOVE YOU DINI ❤️
+    </div>
+  </div>
+
+  <script>
+    function openGift() {
+      document.querySelector('.gift-container').classList.add('opened');
+    }
+  </script>
+
+</body>
+</html>
